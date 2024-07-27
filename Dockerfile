@@ -14,7 +14,7 @@ RUN apt-get update && \
     apt-get clean
 
 # Import the Beldex GPG key correctly
-RUN wget -O https://deb.beldex.io/pub.gpg | gpg --dearmor > /etc/apt/trusted.gpg.d/beldex.gpg
+RUN wget https://deb.beldex.io/pub.gpg | gpg --dearmor > /etc/apt/trusted.gpg.d/beldex.gpg
 
 # Add the Beldex repository
 RUN echo "deb https://deb.beldex.io/apt-repo stable main" > /etc/apt/sources.list.d/beldex.list
